@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+               "use strict";  
+        var eric={
+      ename:"埃里克",
+      eage:25
+    }
+    //企业: 
+    //eage属性值可以修改，但是年龄必须介于18~65之间
+    Object.defineProperties(eric,{
+      //1. 先定义实际存储属性值的受保护的半隐藏的隐姓埋名的属性
+      _eage:{
+        value:eric.eage,//从现在eric对象的旧属性eage中搬家到这里保护起来
+        writable:true,
+        enumerable:false,
+
+      },
+      //2. 找替身，请保镖
+      eage:{
+        get:function(){
+          console.log(`自动调用了一次get()，返回${this._eage}`);
+          return this._eage;
+        },
+        set:function(value){
+          console.log(`自动调用了一次set()，value接收到了新值${value}`)
+          if(value>=18&&value<=65){
+            this._eage=value;
+          }else{
+            throw Error("年龄超范围！")
+          }
+        },
+        enumerable:true,
+      
+      }
+    })
+
+    /***************外界其它程序*************/
+    //想输出eric的eage属性值
+    Object.seal(eric);
+    // eric.Eid=1000;
+    delete eric.ename;
+    console.log(eric);
+    </script>
+</body>
+</html>

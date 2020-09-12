@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //创建一个新元素a标签
+    var a=document.createElement("a");
+    a.innerHTML="go to tmooc";
+    a.href="http://tmooc.cn";
+    console.log(a);
+    document.body.appendChild(a);
+    var input=document.createElement("input");
+    document.body.insertBefore(input,a);
+    var span=document.createElement("span");
+    span.innerHTML="sssssssssss";
+    document.body.insertBefore(span,a);
+    document.body.replaceChild(span,input);
+    </script>
+</body>
+</html>

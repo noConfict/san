@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";  
+        var reic=[
+            eid=1001,
+            name="埃里克"
+        ]
+        var obj=Object.getOwnPropertyDescriptor(laowang,"eid");
+        console.log(obj);
+        
+        Object.defineProperty(laowang,"eid",{
+            writable:true
+        })
+        laowang.eid=1;
+        // 报错禁止给只读属性eid修改   eid is not defined
+        console.log(laowang);
+        Object.defineProperty(eric,{
+
+        })
+
+   
+    </script>
+</body>
+</html>

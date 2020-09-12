@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function order({
+        zhushi="满汉全席",
+        xiaochi="凉拌折耳根",
+        yinliao="农夫山泉"
+    }){
+        console.log(`您本次点的餐是:
+        主食:${zhushi},
+        小吃:${xiaochi},
+        主食:${yinliao}
+        }
+        `)
+    }
+    order({});
+    order({
+        zhushi:"奥尔良烤腿"
+    });
+
+    order({
+        yinliao:"雪碧"
+    })
+
+
+
+
+
+    function intrSelf(str="主人很懒，什么都没留"){
+        console.log(`自我介绍:${str}`);
+    }
+    intrSelf();
+    </script>
+</body>
+</html>

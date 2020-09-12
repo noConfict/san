@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        }
+    var father={
+        money:11111111111111111111,
+        car:"infinity"
+    }
+
+        
+        var lilei=new Student("Li Lei",11);
+        var hmm=new Student("Han Meimei",12);
+        lilei.__proto__=father;
+        Object.setPrototypeOf(hmm,)
+        console.log(lilei);
+        console.log(hmm);
+        
+    </script>
+</body>
+</html>

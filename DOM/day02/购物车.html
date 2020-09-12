@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>使用Selector API实现购物车客户端计算</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+    table>tr:last-child>td{
+        background-color:pink;
+    }
+</style>
+
+</head>
+<body>
+	<table id="data">
+		<thead>
+			<tr>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone6</td>
+				<td>¥4488.00</td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+				<td>¥4488.00</td>
+			</tr>
+			<tr>
+				<td>iPhone6 plus</td>
+				<td>¥5288.00</td>
+				<td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+				</td>
+				<td>¥5288.00</td>
+			</tr>
+			<tr>
+				<td>iPad Air 2</td>
+				<td>¥4288.00</td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>¥4288.00</td>
+            </tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Total: </td>
+				<td>¥14064.00</td>
+			</tr>
+		</tfoot>
+	</table>
+  <script>
+		// 1查找触发的元素
+		// 本例中所有的table下的button课点击
+		var table=document.getElementById("data");
+		var btns=table.getElementsByTagName("button");
+		console.log(btns);
+		// 2绑定事件处理函数
+		// 实验  点谁谁疼
+		// 遍历btns每个按钮对象
+		for(var btn of btns){
+            btn.onclick=function(){
+                // 3查找要修改的元素
+                var span=this.parentElement.children[1];
+                // span.innerHTML="❀";
+                // 4修改元素
+                var n=parseInt(span.innerHTML);
+                // 4.1计算新的n
+                // 4.2如果点的＋ 加一  点-
+                if(this.innerHTML=="+"){
+                    n++;
+                }else if(n>1){
+                    n--;
+                }
+                // 4.3将新的计算后的n放到span中
+                span.innerHTML=n;
+                var subTd=this.parentElement.nextElementSibling;
+                var price=this.parentElement.previousElementSibling;
+                var price=parseInt(
+                    this
+                    .parentElement
+                    .previousElementSibling
+                    .innerHTML
+                    .slice(1)//
+                )
+                var sub=price*n;
+                subTd.innerHTML=`￥${sub.toFixed(2)}`
+                var totalTd=table.querySelector("tfoot>tr>td:last-child");
+                // console.log(totalTd);
+                var tds=table.querySelectorAll("tbody>tr>td:last-child")
+                var total=0;
+                for(var td of tds){
+                    total+=parseInt(td.innerHTML.slice(1));
+                }
+                totalTd.innerHTML=`￥${total.toFixed(2)}`               
+            }
+        }	
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function jisuan(base,bonse1,bonse2){
+            console.log(`${this.ename}的工资是${base+bonse1+bonse2}`)                                                                            
+        }
+        var lilei={ename:"Li Lei"};
+        var hmm={ename:"Han Meimei"}
+        // 临时替换this
+        var arr=[3000,4000,5000];
+        jisuan.call(lilei,5000,3000,2444);
+        jisuan.apply(hmm,arr)
+        
+        // 永久更改this指向
+        //   新函数  原函数       对象   固定值
+        var jisuan2=jisuan.bind(lilei,10000);
+        jisuan2(4000,3000);
+
+
+
+
+        
+    </script>
+</body>
+</html>

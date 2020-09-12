@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{background-color: #f00;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1" style="color:#fff"> hello word</h1>
+    <script>
+        var h1=document.getElementById("h1");
+        var style=getComputedStyle(h1);
+        console.log(style);
+        console.log(style.color);
+        console.log(style.fontSize);
+        console.log(style.backgroundColor);
+        h1.style.fontSize="100px"
+    </script>
+</body>
+</html>

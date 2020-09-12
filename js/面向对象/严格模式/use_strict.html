@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+    function fib(i){
+        if(i<3){
+            return 1;
+        }else{
+            // 外部函数名修改自动获取执行时的函数名
+             return arguments.callee(i-1)+arguments.callee(i-2);
+        }
+    }
+    console.log(fib(10));
+    </script>
+</body>
+</html>

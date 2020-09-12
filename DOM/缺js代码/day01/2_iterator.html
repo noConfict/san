@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>遍历节点树</title>
+		<meta charset="utf-8"/>
+		
+	</head>
+	<body>
+			
+		<span>Hello World !</span>
+		<form action="">
+			用户名:<input name="uname"><br>
+			性别:
+		</form>	
+		<ul id="nav">
+			<li class="item">电影</li>
+			<li class="item">综艺
+				<ul>
+					<li class="item">跑男</li>
+					<li class="item">爸爸</li>
+					<li class="item">极限</li>
+				</ul>
+			</li>
+			<li class="item">剧集</li>
+		</ul>
+		
+    <script>
+		var ul=document.getElementById("nav");
+		var li=ul.getElementsByTagName("item");
+		li.innerHTML="❀";
+	// var ul=document.getElementById("nav");
+	// console.log(ul);
+	// // var li=ul.firstElementChild;
+	// // console.log(li);
+	// var li=ul.getElementsByTagName("li");
+	// console.log(li);
+	// var arr=document.body.firstElementChild;
+	// console.log(arr);
+	// arr.innerHTML="❀";
+	
+	// var arr=document.getElementsByName("uname");
+	// console.log(arr);
+	
+	// var	input=arr[0];
+	// input.value="❀"
+	// console.log(input);
+	</script>
+	</body>
+</html>

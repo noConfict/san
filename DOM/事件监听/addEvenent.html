@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title>...</title>
+   <script>
+   </script>
+</head>
+
+<body>
+   <button id="btnShoot">shoot</button><br>
+   <button id="btnAward">获取跟踪导弹</button><br>
+   <button id="btnBreak">失去跟踪导弹</button><br>
+   <script>
+      var btnShoot=document.getElementById("btnShoot");
+      var btnAward=document.getElementById("btnAward");
+      var btnBreak=document.getElementById("btnBreak");
+      btnShoot.addEventListener(
+         "click",
+         function(){
+            console.log(`发射普通子弹......`)
+         }
+      )  
+      var arr=[];   
+      btnAward.onclick=function(){
+         var shoot2=function(){
+            console.log(`发射跟踪导弹`)
+         }
+         arr.push(shoot2);
+         btnShoot.addEventListener(
+            "click",shoot2
+         )
+      }
+      btnBreak.onclick=function(){
+         var fun=arr.pop();
+         btnShoot.removeEventListener(
+            "click",fun
+         )
+      }
+   </script>
+</body>
+
+</html>

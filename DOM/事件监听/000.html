@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(ename,eage){
+            this.ename=ename;
+            this.eage=eage;
+            this.intr=function(){
+                console.log(`I'm${this.ename},I'm${this.eage}`);
+            }
+        }
+        var lilei=new Student("li lei",11);
+        console.log(lilei);
+//    function pay(){
+//     if(arguments.length==0){
+//         console.log(`手机支付。。。`);
+//     }else if(arguments.length==1){
+//         console.log(`现金支付。。。收您${arguments[0]}元`);
+//     }else{
+//         console.log(`银行卡支付  从您卡号${arguments[0]}扣款成功`);
+//     }
+// }
+    // pay(2000);
+    // pay("3564 3253","3222");
+    // function parent(){
+    //     var total=1000;
+    //     return function(money){
+    //         total-=money;
+            // console.log(`花了${money},还剩${total}`)
+    //         console.log(total);
+    //     }
+    // }
+    // var pay=parent();
+    // pay(100);
+    // pay(500)
+    // pay(500)
+    </script>
+</body>
+</html>

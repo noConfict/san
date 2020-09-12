@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 给亮添加小推车，保存下一项任务
+    function liang(car){
+        console.log(`亮起跑`);
+       setTimeout(function(){
+            console.log(`亮到达终点`)
+            // 当亮到达终点调用car小推车
+            car();
+        },6000)
+    }
+        // 给然添加小推车，保存下一项任务    
+    function ran(car){
+        console.log(`然起跑`);
+        setTimeout(function(){
+            console.log(`然到达终点`);
+            // 当然到达终点调用car小推车            
+            car();
+        },4000)
+    }
+        // 给东添加小推车，保存下一项任务    
+    function dong(car){
+        console.log(`东起跑`);
+        setTimeout(function(){
+            console.log(`东到达终点`);
+            // 当东到达终点调用car小推车
+            car();
+        },2000)
+    }
+    liang(function(){
+        ran(function(){
+            dong();
+        })
+    });
+    </script>
+</body>
+</html>

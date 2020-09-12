@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>动态创建表格</title>
+  <meta charset="utf-8" />
+  <style>
+    table {
+      width: 600px;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    td,
+    th {
+      border: 1px solid #ccc
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="data">
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>薪资</th>
+          <th>年龄</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <script>
+    var json = [
+      { 
+        "ename": "Tom", "salary": 11000, "age": 25 
+      },
+      { 
+        "ename": "John", "salary": 13000, "age": 28 
+      },
+      { 
+        "ename": "Mary", "salary": 12000, "age": 25 
+      }
+    ];
+    //先假设table有tbody
+    //先创建文档片段对象
+   
+    var frag=document.createDocumentFragment(); // 加括号()
+    //2. 遍历数组中每个员工对象
+    //因为json是索引数组，所以用for of
+    for(var emp of json){
+      //3. 每遍历一个员工对象，就创建一个tr，
+      var tr=document.createElement("tr");
+      frag.appendChild(tr)
+      for(var key in emp){
+        //5. 每遍历一个属性，就创建td
+        var td=document.createElement("td")
+        //并添加到tr
+        tr.appendChild(td);
+        //设置td的内容为当前对象的当前属性值
+        td.innerHTML=emp[key];
+      }
+    }
+
+    //最后，当所有tr和td都装进tbody后，才将tbody追加到table中
+    var tbody=document.querySelector("#data>table>tbody");
+    tbody.appendChild(frag);
+  </script>
+</body>
+
+</html>

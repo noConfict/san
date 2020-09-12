@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function Student(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        }
+        var lilei=new Student("Li Lei",11);
+        console.log(lilei);
+        var hmm=Student("Han Meimei",12);
+        // 静默失败报错 Cannot set property 'sname' of undefined
+        console.log(hmm);
+    </script>
+</body>
+</html>

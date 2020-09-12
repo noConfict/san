@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //定义计算工资的函数
+    //              员工姓名  剩余参数
+    function jisuan(ename,...arr){
+        console.log(`${ename}`)
+        console.log(`arr:${arr}`)
+        console.log(`${ename}的总工资是:${
+            arr.reduce((box,elem)=>box+elem,0)
+        }`)    
+    }
+    jisuan("Li Lei",10000,3000,5000);
+    jisuan("王坤",10000,20000,10000);
+    </script>
+</body>
+</html>
